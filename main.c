@@ -111,7 +111,7 @@ int main(){
     int opcao;
 
     printf("=== MINI-GIT: historico de commits ===\n");
-    while(1){
+    do {
         printf("\n1 - Fazer commit\n");
         printf("2 - Ver historico (log)\n");
         printf("3 - Buscar commit pelo id\n");
@@ -131,7 +131,7 @@ int main(){
         else if(opcao == 4) remover_commit(&historico);
         else if(opcao == 0) break;
         else printf("Erro: opcao %d nao existe.\n", opcao);
-    }
+    } while (opcao != 0);
 
     printf("Saindo do mini-git.\n");
     return 0;
