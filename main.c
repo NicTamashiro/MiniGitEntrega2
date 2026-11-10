@@ -52,13 +52,12 @@ void fazer_commit(lista *historico, int *proximo_id){
 }
 
 void ver_historico(lista historico){
-    int i;
     if(lst_len(historico) == 0){
         printf("Nenhum commit ainda.\n");
         return;
     }
     printf("Historico (%d de %d commits):\n", lst_len(historico), LST_MAX);
-    for(i = 0; i < lst_len(historico); i++){
+    for(int i = 0; i < lst_len(historico); i++){
         printf("  commit %d - %s (autor: %s)\n",
                historico.itens[i].id, historico.itens[i].mensagem, historico.itens[i].autor);
     }

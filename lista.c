@@ -5,8 +5,7 @@ int lst_len(lista l){
 }
 
 int lst_localizar(lista l, int id){
-    int i;   
-    for(i = 0; i < lst_len(l); i++){
+    for(int i = 0; i < lst_len(l); i++){
         if(id == l.itens[i].id){
             return i;
         }
@@ -19,9 +18,8 @@ bool lst_inserir(lista*l, Commit val, int k){
 
     if(l->tamanho == LST_MAX || k < 0 || k > l->tamanho)
         return false;
-    int i;
 
-    for(i = l->tamanho - 1; i >= k; i--){
+    for(int i = l->tamanho - 1; i >= k; i--){
         l->itens[i+1] = l->itens[i];
     }
 
@@ -36,8 +34,7 @@ bool lst_remover(lista*l, int k, Commit * val){
         return false;
     }
     (*val) = l->itens[k];
-    int i;
-    for(i = k; i < l->tamanho - 1; i++){
+    for(int i = k; i < l->tamanho - 1; i++){
         l->itens[i] = l->itens[i+1];
     }
     l->tamanho--;
@@ -48,13 +45,12 @@ bool lst_concatenar(lista l1, lista l2, lista * l3){
     /* Não cabe se a soma passar do máximo */
     if(lst_len(l1) + lst_len(l2) > LST_MAX)
         return false;
-    int i;
     l3->tamanho = 0;
-    for(i = 0; i < lst_len(l1); i++){
+    for(int i = 0; i < lst_len(l1); i++){
         l3->itens[l3->tamanho] = l1.itens[i];
         l3->tamanho++;
     }
-    for(i = 0; i < lst_len(l2); i++){
+    for(int i = 0; i < lst_len(l2); i++){
         l3->itens[l3->tamanho] = l2.itens[i];
         l3->tamanho++;
     }
