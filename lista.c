@@ -42,7 +42,6 @@ bool lst_remover(lista*l, int k, Commit * val){
 }
 
 bool lst_concatenar(lista l1, lista l2, lista * l3){
-    /* Não cabe se a soma passar do máximo */
     if(lst_len(l1) + lst_len(l2) > LST_MAX)
         return false;
     l3->tamanho = 0;
